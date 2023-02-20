@@ -9,26 +9,25 @@
 </head>
 <body>
     <script src="./library.js"></script>
-    <button class="open-button" onclick="openForm()" onclick= "closeButton()">+ Add Book</button>
+    <button class="open-button" id="open-button" onclick="openForm()" onclick="closeButton()">+ Add Book</button>
     <div class="form-popup" id="myForm">
         <form action="#" class="form-container">
-          <h1>Add Book</h1>
+          <h1>Book Information</h1>
       
           <label for="title btn"><b>What is the title of the book?</b></label>
           <input type="text" name="title" required>
       
           <label for="author"><b>Who is the author of the book?</b></label>
-          <input type="text" name="author" required>
+          <input type="text" name="author" required> 
 
           <label for="pages"><b>How many pages is the book?</b></label>
           <input type="text" name="pages" required>
 
           <label for="status"><b>Have you read this book?</b></label>
           <input type="checkbox" name="status" required>
-      
-      
-      
-          <button type="submit" class="btn">Submit</button>
+           
+  
+          <button type="submit" class="btn" onclick="addBook()">Submit</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
       </div>

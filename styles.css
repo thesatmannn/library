@@ -1,17 +1,28 @@
 {box-sizing: border-box;}
 
-/* Button used to open the contact form - fixed at the bottom of the page */
+body {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Button used to open the contact*/
 .open-button {
+  display: flex;
   background-color: #555;
   color: white;
   padding: 16px 20px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
-  position: fixed;
   width: 280px;
-
 }
+ button {
+    display: flex;
+ }
+
 
 /* The popup form - hidden by default */
 .form-popup {
@@ -19,7 +30,6 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  border: 3px solid #f1f1f1;
 }
 
 /* Add styles to the form container */
