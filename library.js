@@ -1,6 +1,3 @@
-document.getElementById("myForm").addEventListener("click", (event) =>{
-  event.preventDefault()
-});
 
 const myLibrary = [];
 
@@ -12,16 +9,19 @@ function Book(title, author, pages, status) {
 }
 // add book to library array
 function addBook() {
-  const title = document.getElementByName("title").value;
-  const author = document.getElementByName("author").value;
-  const pages = document.getElementByName("pages").value;
-  const status = document.getElementByName("status").value;
+  document.getElementById("myForm").addEventListener("click", (event) =>{
+    event.preventDefault()
+  });
+  const title = document.querySelector("[name=\"title\"]").value;
+  const author = document.querySelector("[name=\"author\"]").value;
+  const pages = document.querySelector("[name=\"pages\"]").value;
+  const status = document.querySelector("[name=\"status\"]").value;
 
   const newBook = new Book(title, author, pages, status);
 
   myLibrary.push(newBook);
-   console.log(newBook);
 
+  closeForm();
 }
 
 
@@ -38,7 +38,6 @@ function createTable() {
 
 
 
-console.log(myLibrary);
 
 
 
