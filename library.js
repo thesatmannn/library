@@ -1,5 +1,5 @@
-
 const myLibrary = [];
+const myTable = document.querySelector("#table");
 
 function Book(title, author, pages, status) {
   this.title = title;
@@ -11,41 +11,54 @@ function Book(title, author, pages, status) {
 function addBook() {
   document.getElementById("myForm").addEventListener("click", (event) =>{
     event.preventDefault()
+    myForm.style.display = "none";
   });
+  let bookCard = document.createElement("div");
+  bookCard.classList("book");
+  bookCard.setAttribute("data-index", `${i}`);
+
   const title = document.querySelector("[name=\"title\"]").value;
+  let titleText = document.createElement("h3");
+  titleText.innerHTML = `title: ${title}`;
+
   const author = document.querySelector("[name=\"author\"]").value;
+  let authorText = document.createElement("h3");
+  authorText.innerHTML = `author: ${author}`;
+
+
   const pages = document.querySelector("[name=\"pages\"]").value;
+  let pagesText = document.createElement("h3");
+  pagesText.innerHTML = `pages: ${pages}`;
+
+
   const status = document.querySelector("[name=\"status\"]").value;
+  let statusText = document.createElement("h3");
+  titleText.innerHTML = `title: ${title}`;
+
 
   const newBook = new Book(title, author, pages, status);
 
   myLibrary.push(newBook);
-
-  closeForm();
+ closeForm();
 }
 
+const staticBook = Book('Mandibles', 'Lionel Shriever' , '356', 'on' );
 
-  // do stuff here
+
+for(let i = 0; i < myLibrary.length; i++){
   
 
-function createTable() {
-  const table = document.createElement("table");
-
-  for (let i = 0; i < myLibrary.length; i++){
-    
-  }
 }
 
-
-
-
-
-
-
-
-
-
-
+// creates div from array elements
+function displayCard() {
+  myLibrary.forEach(element => {
+    const newDiv = document.createElement("div");
+    const cardText = document.createTextNode(
+    
+  });
+}
+  
 
 
 
