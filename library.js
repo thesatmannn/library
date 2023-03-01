@@ -1,5 +1,11 @@
 const myLibrary = [];
-const myTable = document.querySelector("#table");
+
+const addBookbtn = document.querySelector(".open-button");
+const bookCardcontainer = document.querySelector(".bookcard-container");
+
+addBookbtn.addEventListener("click", () => {
+  addBookbtn.style.visibility = "none";
+});
 
 function Book(title, author, pages, status) {
   this.title = title;
@@ -8,56 +14,56 @@ function Book(title, author, pages, status) {
   this.status = status;
 }
 // add book to library array
-function addBook() {
+function addBook(i) {
   document.getElementById("myForm").addEventListener("click", (event) =>{
     event.preventDefault()
-    myForm.style.display = "none";
+    closeForm();
+    hideButton();
   });
-  let bookCard = document.createElement("div");
-  bookCard.classList("book");
+
+  
+
+  const bookCard = document.createElement("div");
+  
+  bookCard.classList.add("book");
   bookCard.setAttribute("data-index", `${i}`);
 
   const title = document.querySelector("[name=\"title\"]").value;
-  let titleText = document.createElement("h3");
-  titleText.innerHTML = `title: ${title}`;
+  const titleText = document.createElement("h2");
+  titleText.innerHTML = `Title: ${title}`;
 
   const author = document.querySelector("[name=\"author\"]").value;
-  let authorText = document.createElement("h3");
-  authorText.innerHTML = `author: ${author}`;
+  const authorText = document.createElement("h3");
+  authorText.innerHTML = `Author: ${author}`;
 
 
   const pages = document.querySelector("[name=\"pages\"]").value;
-  let pagesText = document.createElement("h3");
-  pagesText.innerHTML = `pages: ${pages}`;
+  const pagesText = document.createElement("h3");
+  pagesText.innerHTML = `Pages: ${pages}`;
 
 
   const status = document.querySelector("[name=\"status\"]").value;
-  let statusText = document.createElement("h3");
-  titleText.innerHTML = `title: ${title}`;
+  const statusText = document.createElement("h3");
+  statusText.innerHTML = `Read? ${status}${status === "on" ? "yes" : "no" }`;
 
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("delete");
+  deleteButton.innerHTML = "Delete"
 
   const newBook = new Book(title, author, pages, status);
 
   myLibrary.push(newBook);
- closeForm();
-}
-
-const staticBook = Book('Mandibles', 'Lionel Shriever' , '356', 'on' );
-
-
-for(let i = 0; i < myLibrary.length; i++){
+  bookCard.appendChild(titleText);
+  bookCard.appendChild(authorText);
+  bookCard.appendChild(pagesText);
+  bookCard.appendChild(statusText);
+  bookCardcontainer.appendChild(bookCard);
+ 
   
-
+ 
 }
 
-// creates div from array elements
-function displayCard() {
-  myLibrary.forEach(element => {
-    const newDiv = document.createElement("div");
-    const cardText = document.createTextNode(
-    
-  });
-}
+
   
 
 
@@ -73,5 +79,6 @@ function closeForm() {
 }
 
 function hideButton() {
-    document.getElementById("open-button").style.visibility = "hidden";
+    document.getElementById("open-button").style.visibility = "none";
 }
+

@@ -9,23 +9,23 @@ body {
     text-align: center;
 }
 
-div {
-  display: inline-block;
-}
 
-#table {
-  display: inline-block;
-  margin-top: 20px;
-}
 
-th. td {
-  border: 1px solid black;
-  padding: 5px;
+.bookcard-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex: 1;
+  max-width: 1000;
+  position: absolute;
+  top: 12%;
+  left: 15%;
+  margin: 2rem;
 }
 
 /* Button used to open the contact*/
 .open-button {
-  display: flex;
+  text-align: center;
   background-color: #555;
   color: white;
   padding: 16px 20px;
@@ -33,6 +33,7 @@ th. td {
   cursor: pointer;
   opacity: 0.8;
   width: 280px;
+  border-radius: 45px;
 }
 
 
@@ -40,7 +41,7 @@ th. td {
 /* The popup form - hidden by default */
 .form-popup {
   display: none;
-  text-align: center;
+  text-align: left;
   align-items: center;
   justify-content: center;
 }

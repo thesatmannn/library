@@ -8,23 +8,23 @@
     <title>Library</title>
 </head>
 <body>
-    <script src="./library.js"></script>
+    <script src="./library.js" defer></script>
     <button class="open-button" id="open-button" onclick="openForm()" onclick="closeButton()">+ Add Book</button>
-    <div class="table"></div>
+    <div class="bookcard-container"></div>
     <div class="form-popup" id="myForm">
         <form action="#" class="form-container">
-          <h1>Book Information</h1>
+          <h1>Add Book</h1>
       
-          <label for="title btn"><b>What is the title of the book?</b></label>
+          <label for="title"><b>Title:</b></label>
           <input type="text" name="title" required>
       
-          <label for="author"><b>Who is the author of the book?</b></label>
+          <label for="author"><b>Author:</b></label>
           <input type="text" name="author" required> 
 
-          <label for="pages"><b>How many pages is the book?</b></label>
+          <label for="pages"><b>Pages:</b></label>
           <input type="text" name="pages" required>
 
-          <label for="status"><b>Have you read this book?</b></label>
+          <label for="status"><b>Have you read the book?</b></label>
           <input type="checkbox" name="status" required>
            
   
