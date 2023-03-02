@@ -44,7 +44,7 @@ function addBook(i) {
 
   const status = document.querySelector("[name=\"status\"]").value;
   const statusText = document.createElement("h3");
-  statusText.innerHTML = `Read? ${status}${status === "on" ? "yes" : "no" }`;
+  statusText.innerHTML = `Read? ${status === "YES" ? "Yes" : "no" }`;
 
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete");
