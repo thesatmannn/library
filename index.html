@@ -8,11 +8,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <title>Library</title>
 </head>
 <body>
+  <header>
+    <h1>My Library</h1>
+  </header>
+  <script src="https://kit.fontawesome.com/f4826bc879.js" crossorigin="anonymous"></script>
     <script src="./library.js" defer></script>
-    <button class="open-button" id="open-button" onclick="openForm()" onclick="closeButton()">+ Add Book</button>
+    <button class="open-button" id="open-button" onclick="openForm()">+</button>
     <div class="bookcard-container"></div>
     <div class="form-popup" id="myForm">
         <form action="#" class="form-container">
@@ -34,7 +41,7 @@
             <option value="no">No</option>
           </select>
           </div>
-          <button type="submit" class="btn" onclick="addBook()">Submit</button>
+          <button type="submit" class="btn submit" onclick="addBook()">Submit</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
       </div>

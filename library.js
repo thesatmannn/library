@@ -2,10 +2,10 @@ const myLibrary = [];
 
 const addBookbtn = document.querySelector(".open-button");
 const bookCardcontainer = document.querySelector(".bookcard-container");
+const submitBtn = document.querySelector(".submit");
 
-addBookbtn.addEventListener("click", () => {
-  addBookbtn.style.visibility = "none";
-});
+
+
 
 function Book(title, author, pages, status) {
   this.title = title;
@@ -17,12 +17,9 @@ function Book(title, author, pages, status) {
 function addBook(i) {
   document.getElementById("myForm").addEventListener("click", (event) =>{
     event.preventDefault()
-    closeForm();
-    hideButton();
+    closeForm(); 
+    bookCardcontainer.style.display = "flex";
   });
-
-  
-
   const bookCard = document.createElement("div");
   
   bookCard.classList.add("book");
@@ -48,7 +45,10 @@ function addBook(i) {
 
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete");
-  deleteButton.innerHTML = "Delete"
+  deleteButton.innerHTML = "Delete <i class=\"fa-solid fa-trash-can\"></i>";
+  deleteButton.addEventListener("click", () => {
+    bookCardcontainer.removeChild(bookCard, 1);
+  });
 
   const newBook = new Book(title, author, pages, status);
 
@@ -57,28 +57,20 @@ function addBook(i) {
   bookCard.appendChild(authorText);
   bookCard.appendChild(pagesText);
   bookCard.appendChild(statusText);
+  bookCard.appendChild(deleteButton);
   bookCardcontainer.appendChild(bookCard);
- 
-  
- 
 }
-
-
-  
-
-
-
-
 
 function openForm() {
     document.getElementById("myForm").style.display = "flex";
+    document.getElementById("open-button").style.display = "none";
+    bookCardcontainer.style.display = "none";
 }
   
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
+    document.getElementById("open-button").style.display = "block";
 }
 
-function hideButton() {
-    document.getElementById("open-button").style.visibility = "none";
-}
+
 
