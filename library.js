@@ -45,7 +45,7 @@ function addBook(i) {
 
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete");
-  deleteButton.innerHTML = "Delete <i class=\"fa-solid fa-trash-can\"></i>";
+  deleteButton.innerHTML = "<i class=\"fa-solid fa-trash-can\"></i>";
   deleteButton.addEventListener("click", () => {
     bookCardcontainer.removeChild(bookCard, 1);
   });

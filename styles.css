@@ -32,7 +32,6 @@ header {
   align-items: flex-start;
   background-color: #04AA6D;
   top:-20px;
-  background: linear-gradient(rgb(4, 15, 24));
   font-size: larger;
   
 }
@@ -43,7 +42,9 @@ header {
   flex-wrap: wrap;
   flex: 1;
   max-width: 1000;
-  
+  position: absolute;
+  top: 12%;
+  left: 15%;
   margin: 2rem;
 }
 
@@ -55,19 +56,42 @@ header {
   background-color:rgb(1, 19, 34); ;
   color: aliceblue;
   border-radius: 35px;
-  border: 1px solid #04AA6D;
+  border: 1px solid #04AA6D;  
+  overflow: hidden;
   margin: 5px;
-  padding: 15px 15px;
   
-
 }
 
-.delete {
+.book:hover {
+  box-shadow: 3px 3px 30px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.book h2 {
+  background-color:#04AA6D;
+  padding: 0.5rem 0;
+  margin: -0.5rem 0;
+  border-top-right-radius: 35px;
+  border-top-left-radius: 35px;
+  
+
+
+  
+}
+
+
+.book h3 {
+  border-bottom: 1px solid rgba(24, 230, 20, 0.1);
+}
+
+.book .delete {
   color: aliceblue;
-  background-color:rgb(1, 19, 34); ;
+  background-color:#04AA6D;
   border: none;
   cursor: pointer;
-  
+  font-size:x-large;
+  margin-top: 10px;
+
 }
 
 /* Button used to open the contact*/
