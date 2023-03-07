@@ -59,29 +59,35 @@ header {
   border: 1px solid #04AA6D;  
   overflow: hidden;
   margin: 5px;
-  
 }
 
 .book:hover {
   box-shadow: 3px 3px 30px 10px rgba(0, 0, 0, 0.15);
 }
 
-
 .book h2 {
   background-color:#04AA6D;
-  padding: 0.5rem 0;
+  padding: 1.0rem 0;
   margin: -0.5rem 0;
   border-top-right-radius: 35px;
   border-top-left-radius: 35px;
-  
-
-
-  
+  overflow: hidden;
 }
-
 
 .book h3 {
   border-bottom: 1px solid rgba(24, 230, 20, 0.1);
+  overflow: hidden;
+}
+
+.book .update {
+  color: aliceblue;
+  background-color:#10818b;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  margin: 0px;
+  font-size: large;
+  padding: 5px;
 }
 
 .book .delete {
@@ -89,9 +95,10 @@ header {
   background-color:#04AA6D;
   border: none;
   cursor: pointer;
-  font-size:x-large;
-  margin-top: 10px;
-
+  margin: 0;
+  font-size: large;
+  padding: 5px;
+    
 }
 
 /* Button used to open the contact*/

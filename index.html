@@ -36,12 +36,12 @@
           <div class="status">
           <label for="status"><b>Have you read the book?</b></label>
           <select id="status" name="status" required>
-            <option value="" selected disabled hidden>Yes or no?</option>
+            <option value="" selected disabled hidden required>Yes or no?</option>
             <option value="yes">Yes</option>
             <option value="no">No</option>
           </select>
           </div>
-          <button type="submit" class="btn submit" onclick="addBook()">Submit</button>
+          <button type="submit" class="btn submit" onclick="submitForm()">Submit</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
       </div>
