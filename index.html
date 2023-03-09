@@ -24,15 +24,12 @@
     <div class="form-popup" id="myForm">
         <form action="#" class="form-container">
           <h1>Add Book</h1>
-      
           <label for="title"><b>Title:</b></label>
           <input type="text" name="title" required>
-      
           <label for="author"><b>Author:</b></label>
           <input type="text" name="author" required> 
-
           <label for="pages"><b>Pages:</b></label>
-          <input type="number" name="pages" min="1" max="2000" required pattern='[0-9]{10}'>
+          <input type="number" name="pages" min="1" max="5000" required pattern='[0-9]{10}'>
           <div class="status">
           <label for="status"><b>Have you read the book?</b></label>
           <select id="status" name="status" required>
@@ -41,7 +38,7 @@
             <option value="no">No</option>
           </select>
           </div>
-          <button type="submit" class="btn submit" onclick="submitForm()">Submit</button>
+          <button type="submit" class="btn submit">Submit</button>
           <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
       </div>

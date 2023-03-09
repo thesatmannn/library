@@ -5,21 +5,28 @@ const bookCardcontainer = document.querySelector(".bookcard-container");
 const submitBtn = document.querySelector(".submit");
 const myForm = document.getElementById("myForm");
 
+// set object constructor
 function Book(title, author, pages, status) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.status = status;
 }
-// add book to library array
-function addBook(i) {
-  myForm.addEventListener("click", (event) =>{
-    event.preventDefault()
-    closeForm()
-    bookCardcontainer.style.display = "flex";
+
+myForm.addEventListener("submit", (event) =>{
+  event.preventDefault();
+  addBook(closeForm());
+
+  const inputs = document.querySelectorAll("[name=\"title\"], [name=\"author\"], [name=\"pages\"], [name=\"status\"]");
+
+  inputs.forEach(input => {
+    input.value = "";
   });
-  const bookCard = document.createElement("div");
+});
   
+// add book to library array, display books in container and close form
+function addBook(i) {
+  const bookCard = document.createElement("div");
   bookCard.classList.add("book");
   bookCard.setAttribute("data-index", `${i}`);
 
@@ -31,20 +38,17 @@ function addBook(i) {
   const authorText = document.createElement("h3");
   authorText.innerHTML = `Author: ${author}`;
 
-
   const pages = document.querySelector("[name=\"pages\"]").value;
   const pagesText = document.createElement("h3");
-  pagesText.innerHTML = `Pages: ${pages}`;
-
+  pagesText.innerHTML = `Pages: ${pages}`; 
 
   const status = document.querySelector("[name=\"status\"]").value;
   const statusText = document.createElement("h3");
-  statusText.innerHTML = `Read? ${status}${status === "Yes" ? "Yes" : "No"}`;
+  statusText.innerHTML = `Read? ${status}`;
 
   const updateButton = document.createElement("button");
   updateButton.classList.add("update");
   updateButton.innerHTML = "Update <i class=\"fas fa-pen\"></i>";
-
 
   updateButton.addEventListener("click", () => {
     if (statusText.innerHTML === "Read? No") {
@@ -55,7 +59,7 @@ function addBook(i) {
       bookCard.status = "No";
     }
   });
-
+// delete book objects from array 
   const deleteButton = document.createElement("button");
   deleteButton.classList.add("delete");
   deleteButton.innerHTML = "Delete <i class=\"fa-solid fa-trash-can\"></i>";
@@ -64,7 +68,7 @@ function addBook(i) {
   });
 
   const newBook = new Book(title, author, pages, status);
-
+// push book objects to html
   myLibrary.push(newBook);
   bookCard.appendChild(titleText);
   bookCard.appendChild(authorText);
@@ -84,13 +88,5 @@ function openForm() {
 function closeForm() {
     myForm.style.display = "none";
     addBookbtn.style.display = "block";
-    
-}
-
-function submitForm() {
-  addBook();
-  closeForm();
-  myForm.style.display = "none";
-  
-
+    bookCardcontainer.style = "flex";
 }
